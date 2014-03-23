@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trexlsx - export Trello board to Excel XLSX</title>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="https://api.trello.com/1/client.js?key={{TRELLO_APP_KEY}}&dummy=.js"></script>
+  <script type='text/javascript' src="/static/trello_auth.js"></script>
+  <link href="/static/trexcel.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1 class="text-muted">Trexlsx - Export Trello board to Excel (xlsx)</h1>
+  </div>
+
+  <div class="jumbotron">
+    <p class="lead">Export Trello board to Excel (Office Open XML format).</p>
+    <div id="loggedout">
+      <a id="connectLink" class="btn btn-success" href="#">Connect To Trello</a>
+    </div>
+
+    <div id="loggedin">
+      <div id="header">
+        Logged in as <span id="fullName"></span>
+        <a id="disconnect" href="#">Log Out</a>
+      </div>
+
+      <form method="post" action="/export/" id="selectboard">
+        <div class="form-group">
+          <label for="board_id">Select board:</label>
+          <div id="output"></div>
+          <input type="hidden" name="token" id="token">
+          <p><button class="btn btn-success" type="submit">Export</button></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row marketing">
+    <div class="col-lg-6">
+      <h4>What's this?</h4>
+      <p>Sometimes you need to export a Trello board to a spreadsheet for further processing. This application will help you do that. A typical use case could be this scenario: Managment: -"I would like a report of project activity and status." You: -"Sure, here is a link to our Trello board", Management: -"What's Trello?".</p>
+
+      <h4>Will you be able to read my Trello data?</h4>
+      <p>Yes, for a short while when it is downloaded and transferred to a spreadsheet file. After it has been sent it will be deleted. Trello account access is only granted for an hour.</p>
+
+      <h4>Can you edit my Trello data?</h4>
+      <p>No, this application only requests read permissions for your Trello data for an hour.</p>
+    </div>
+
+    <div class="col-lg-6">
+      <h4>I clicked 'export' but nothing happened?</h4>
+      <p>Are you sure? Check your recently downoaded files. Sometimes the export process is really quick.</p>
+
+      <h4>Is everything exported?</h4>
+      <p>No, only basic information for each card like id, name, description etc.</p>
+
+      <h4>Bugs, praise, feature requests?</h4>
+      <p>Check out <a href="https://github.com/peterk/trexlsx">the source code here</a>.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+  </div>
+
+</div> <!-- /container -->
+</body>
+</html>
