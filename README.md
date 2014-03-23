@@ -13,5 +13,5 @@ Installation
 ------------
 
 1. Clone this repository
-2. Get a (trello application key)[https://trello.com/docs/gettingstarted/#getting-an-application-key] and paste into settings.py
+2. Get a [trello application key](https://trello.com/docs/gettingstarted/#getting-an-application-key) and paste into settings.py
 3. Run with foreman start
