@@ -6,6 +6,6 @@ gunicorn==18.0
 itsdangerous==0.23
 wsgiref==0.1.2
 requests
-openpyxl==1.8.4
+openpyxl==2.4.2
 iso8601
 trello==0.9.1
